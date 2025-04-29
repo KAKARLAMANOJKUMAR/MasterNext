@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to MasterNext Technologies—a leading tech company based in Ongole, Andhra Pradesh, India, committed to transforming ideas into impactful digital solutions.">
+    <meta name="keywords" content="Tech company India, digital transformation, AI solutions, empower students with technology, real-world tech solutions">
+    <meta name="author" content="MasterNext Technologies">
+    <title>MasterNext Technologies</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Added Google Fonts link for Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="Assets/MasterNext Light Logo.png" type="image/png" sizes="200x200" style="background-color: #ffffff; border-radius: 50%;">
+    <style>
+        /* Global font override */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-header {
+            backdrop-filter: blur(11px) saturate(117%);
+            -webkit-backdrop-filter: blur(11px) saturate(117%);
+            background-color: rgba(17, 25, 40, 0.01);
+            background-color: #111927;
+            background-image: 
+                radial-gradient(at 47% 33%, hsl(230.00, 68%, 30%) 0, transparent 59%), 
+                radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 55%);
+            /* Removed border line */
+        }
+
+       
+
+        /* Glassmorphism card effect */
+        .card {
+            backdrop-filter: blur(11px) saturate(117%);
+            -webkit-backdrop-filter: blur(11px) saturate(117%);
+            background-color: rgba(17, 25, 40, 0.01);
+            border-radius: 12px;
+            border: 20px solid rgba(221, 206, 206, 0.125);
+        }
+
+        .interactive-text span {
+            display: inline-block;
+            transition: transform 0.3s ease, font-size 0.3s ease;
+        }
+
+        .interactive-text span:hover {
+            transform: scale(1.1);
+            font-size: 1.1rem;
+        }
+
+        .logo-top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo-top-left {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            width: 150px; /* Default size for laptops */
+        }
+
+        @media (max-width: 576px) {
+            .logo-top-left {
+                width: 100px; /* Adjusted size for mobile */
+            }
+        }
+
+        .navbar {
+            backdrop-filter: blur(11px) saturate(117%);
+            -webkit-backdrop-filter: blur(11px) saturate(117%);
+            background: linear-gradient(90deg, rgba(17, 25, 40, 0.3), rgba(17, 25, 40, 0.5)); /* Gradient background */
+            border-radius: 0px; /* Rounded corners for the navbar */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: all 0.3s ease; /* Smooth transition */
+            position: sticky; /* Sticky navbar */
+            top: 0; /* Stick to the top */
+            z-index: 1000; /* Ensure it stays above other elements */
+        }
+
+        .navbar:hover {
+            background: linear-gradient(90deg, rgba(17, 25, 40, 0.5), rgba(17, 25, 40, 0.7)); /* Darker gradient on hover */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        }
+
+        .navbar-nav .nav-link {
+            color: white; /* Default link color */
+            font-weight: 500; /* Slightly bold links */
+            padding: 10px 15px; /* Add padding for better spacing */
+            border-radius: 50px; /* Rounded link background */
+            transition: all 0.3s ease; /* Smooth transition */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #cfb50b; /* Highlight color on hover */
+            background-color: rgba(255, 255, 255, 0.1); /* Subtle background on hover */
+        }
+
+        .navbar-nav .nav-link.active {
+            color: #bebe28; /* Active link color */
+            background-color: rgba(255, 255, 255, 0.2); /* Active link background */
+            font-weight: bold; /* Bold active link */
+        }
+
+        .navbar-toggler {
+            border: none; /* Remove border from the toggler */
+            background-color: rgba(255, 255, 255, 0.2); /* Subtle background for the toggler */
+            border-radius: 50%; /* Rounded toggler */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        .navbar-toggler:hover {
+            background-color: rgba(255, 255, 255, 0.4); /* Highlight toggler on hover */
+        }
+
+        .glass-section {
+            backdrop-filter: blur(11px) saturate(117%);
+            -webkit-backdrop-filter: blur(11px) saturate(117%);
+            background-color: rgba(17, 25, 40, 0.3); /* Increased transparency */
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.125);
+            padding: 20px;
+        }
+
+        .responsive-video {
+            width: 100%;
+            height: auto;
+            border-radius: 20px; /* Adjusted for better appearance */
+            max-height: 300px; /* Limit height for smaller devices */
+        }
+
+        .hero-section {
+            position: relative;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5)), 
+                        url('https://via.placeholder.com/1920x1080'); /* Replace with your image URL */
+            background-size: cover;
+            background-attachment: fixed; /* Parallax effect */
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            animation: backgroundAnimation 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 50% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            animation: float 3s ease-in-out infinite; /* Floating animation */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+       
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, #000000, #302a2a); /* Blue-purple gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlow 2s infinite alternate;
+        }
+
+      
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #00c6ff, 0 0 20px #0072ff, 0 0 30px #001eff;
+            }
+            to {
+                text-shadow: 0 0 20px #0072ff, 0 0 30px #001eff, 0 0 40px #00c6ff;
+            }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .hero-buttons .btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-buttons .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: skewX(-45deg);
+            transition: all 0.3s ease;
+        }
+
+        .hero-buttons .btn:hover::before {
+            left: 100%; /* Slide effect on hover */
+        }
+
+        .hero-buttons .btn-primary {
+            background-color: #6a11cb; /* Blue-purple gradient start */
+            color: white;
+            border: none;
+            background-image: linear-gradient(90deg, #6a11cb, #2575fc); /* Blue-purple gradient */
+        }
+
+        .hero-buttons .btn-primary:hover {
+            background-image: linear-gradient(90deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
+            transform: scale(1.1);
+        }
+
+        .hero-buttons .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .hero-buttons .btn-secondary:hover {
+            background-color: white;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        .hero-search {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-search .form-control {
+            border-radius: 50px;
+            padding: 15px 20px;
+            font-size: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .hero-search .form-control:focus {
+            border-color: #6a11cb;
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 10px rgba(106, 17, 203, 0.5);
+            outline: none;
+        }
+
+        .hero-cta {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .scroll-arrow {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .scroll-arrow span {
+            display: block;
+            width: 15px;
+            height: 15px;
+            border-right: 2px solid rgba(255, 255, 255, 0.8);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+            transform: rotate(45deg);
+            animation: arrow-bounce 1.5s infinite;
+        }
+
+        .scroll-arrow span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .scroll-arrow span:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .scroll-arrow span:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes arrow-bounce {
+            0%, 100% {
+                transform: translateY(0) rotate(45deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(10px) rotate(45deg);
+                opacity: 0.5;
+            }
+        }
+
+        .gradient-card {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gradient-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            z-index: 0;
+        }
+
+        .gradient-card h1, .gradient-card p {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .animate-slide-up {
+            animation: slideUp 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive adjustments for smaller devices */
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 70vh; /* Adjust height for smaller screens */
+                background-attachment: scroll; /* Disable parallax effect */
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem; /* Reduce font size */
+                letter-spacing: 1px;
+            }
+
+            .hero-content p {
+                font-size: 1rem; /* Reduce font size */
+            }
+
+            .gradient-card {
+                padding: 20px; /* Reduce padding */
+            }
+
+            .gradient-card h1 {
+                font-size: 1.8rem; /* Adjust heading size */
+            }
+
+            .gradient-card p {
+                font-size: 0.9rem; /* Adjust paragraph size */
+            }
+
+            .navbar-nav .nav-link {
+                padding: 8px 10px; /* Adjust padding for navigation links */
+            }
+
+            .responsive-video {
+                border-radius: 15px; /* Adjust video border radius */
+            }
+
+            .navbar {
+                background: rgba(17, 25, 40, 0.9); /* Increase opacity for better visibility */
+                backdrop-filter: blur(5px); /* Add blur effect */
+                -webkit-backdrop-filter: blur(5px);
+            }
+
+            .navbar-toggler {
+                background-color: rgba(255, 255, 255, 0.3); /* Subtle background for toggler */
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 0.9rem; /* Adjust font size for smaller screens */
+            }
+
+            /* Improve navbar visibility on mobile */
+            .navbar-nav .nav-link {
+                font-size: 5rem; /* Increase font size */
+                padding: 20px 15px; /* Add more padding */
+                color: #ffffff; /* Ensure text is clearly visible */
+            }
+
+            .navbar-toggler {
+                background-color: rgba(255, 255, 255, 0.5); /* Make toggler more visible */
+            }
+
+            .offcanvas-header {
+                background-color: rgba(17, 25, 40, 0.9); /* Add background to offcanvas header */
+                color: #ffffff; /* Ensure text is visible */
+            }
+
+            .offcanvas-body {
+                background-color: rgba(17, 25, 40, 0.95); /* Add background to offcanvas body */
+            }
+
+            .offcanvas-body .nav-link {
+                margin-bottom: 10px; /* Add spacing between links */
+                border-radius: 5px; /* Add slight rounding for better appearance */
+                transition: background-color 0.3s ease;
+            }
+
+            .offcanvas-body .nav-link:hover {
+                background-color: rgba(255, 255, 255, 0.2); /* Highlight on hover */
+            }
+
+            .offcanvas {
+                height: 100vh; /* Full height to display all items */
+                overflow-y: hidden; /* Prevent scrolling */
+            }
+
+            .offcanvas-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center; /* Center items vertically */
+                align-items: center; /* Center items horizontally */
+                padding: 20px; /* Add padding for better spacing */
+            }
+
+            .offcanvas-body .nav-link {
+                font-size: 1.2rem; /* Increase font size for better readability */
+                padding: 15px 20px; /* Add padding for touch targets */
+                width: 100%; /* Make links span full width */
+                text-align: center; /* Center align text */
+            }
+
+            .offcanvas-body .nav-link:hover {
+                background-color: rgba(255, 255, 255, 0.2); /* Highlight on hover */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                height: 60vh; /* Further adjust height for very small screens */
+            }
+
+            .hero-content h1 {
+                font-size: 2rem; /* Further reduce font size */
+            }
+
+            .hero-content p {
+                font-size: 0.9rem; /* Further reduce font size */
+            }
+
+            .gradient-card h1 {
+                font-size: 1.5rem; /* Further adjust heading size */
+            }
+
+            .gradient-card p {
+                font-size: 0.8rem; /* Further adjust paragraph size */
+            }
+
+            .video-wrapper {
+                margin-bottom: 20px; /* Add spacing below video */
+            }
+
+            .navbar {
+                background: rgba(17, 25, 40, 1); /* Fully opaque for very small screens */
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 0.8rem; /* Further reduce font size */
+            }
+
+            .responsive-video {
+                max-height: 200px; /* Further limit video height */
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 0.9rem; /* Slightly smaller font for very small screens */
+            }
+
+            .offcanvas-body .nav-link {
+                padding: 10px 12px; /* Adjust padding for smaller screens */
+            }
+
+            .offcanvas-body .nav-link {
+                font-size: 1rem; /* Slightly smaller font for very small screens */
+                padding: 12px 15px; /* Adjust padding */
+            }
+        }
+
+        /* Sticky navbar with visible background on scroll */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(17, 25, 40, 0.95); /* Solid background on scroll */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for visibility */
+        }
+
+        /* Theme toggle button styles */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #6a11cb; /* Default theme color */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            z-index: 1100;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            background-color: #2575fc; /* Hover color */
+        }
+
+        .theme-toggle svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle.dark svg {
+            transform: rotate(180deg); /* Rotate icon for dark mode */
+        }
+
+        .gif-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('Assets/Software Development.gif') no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+            opacity: 0.5; /* Adjust opacity as needed */
+        }
+
+        .faq h3, .testimonials h3 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: rgb(0, 0, 0); /* Ensure text is white for better contrast */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Add a stronger shadow for visibility */
+        }
+
+        .faq .accordion-button {
+            background: rgba(0, 0, 0, 0.8); /* Darker background for better contrast */
+            color: white;
+            border: none;
+            font-weight: bold;
+        }
+
+        .faq .accordion-body {
+            background: rgba(0, 0, 0, 0.7); /* Darker background for better readability */
+            color: rgba(255, 255, 255, 0.9); /* Slightly lighter text color */
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .testimonials .testimonial-card {
+            background: rgba(0, 0, 0, 0.8); /* Darker background for better contrast */
+            color: rgba(255, 255, 255, 0.9); /* Slightly lighter text color */
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for readability */
+        }
+        .cta-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white; /* Ensure text color is white */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add subtle shadow for better visibility */
+        }
+
+        .cta-text {
+            font-size: 1rem;
+            color: white; /* Ensure text color is white */
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Add subtle shadow for better visibility */
+        }
+        body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .card, .glass-section, .gradient-card, .futuristic-card, .animated-card, .combined-card, .testimonial-card, .cta-card {
+            border-radius: 0; /* Remove rounded corners */
+        }
+
+        .navbar, .offcanvas, .hero-content, .faq .accordion-body, .faq .accordion-button {
+            border-radius: 0; /* Remove rounded corners */
+        }
+
+        .cta-section, .client-logos-section, .testimonials-section, .development-section, .futuristic-section, .combined-section {
+            border-radius: 0; /* Remove rounded corners */
+        }
+
+        .responsive-video {
+            border-radius: 0; /* Remove rounded corners from videos */
+        }
+
+        .navbar-toggler {
+            border-radius: 0; /* Remove rounded corners from toggler */
+        }
+
+        .offcanvas-body .nav-link {
+            border-radius: 0; /* Remove rounded corners from offcanvas links */
+        }
+
+        .faq .accordion-body, .faq .accordion-button {
+            border-radius: 0; /* Remove rounded corners from FAQ accordion */
+        }
+
+        .footer, .footer .row, .footer .col-md-4 {
+            border-radius: 0; /* Remove rounded corners from footer */
+        }
+
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #6a11cb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            z-index: 1100;
+            font-size: 24px;
+            color: white;
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+            background-color: #2575fc;
+        }
+
+        .chatbot-container {
+            position: fixed;
+            bottom: 140px;
+            right: 20px;
+            width: 300px;
+            max-width: 90%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1100;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chatbot-header {
+            background-color: #6a11cb;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-body {
+            padding: 10px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chatbot-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+
+        .chatbot-input-container {
+            display: flex;
+            gap: 5px;
+        }
+
+        .chatbot-input-container input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .chatbot-input-container button {
+            padding: 10px 15px;
+            background-color: #6a11cb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .chatbot-input-container button:hover {
+            background-color: #2575fc;
+        }
+
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .animate-transparent {
+            background: rgba(0, 0, 0, 0.7); /* Transparent dark background */
+            padding: 30px;
+            animation: fadeInTransparent 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInTransparent {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1); /* Transparent card background */
+            border: none;
+            padding: 20px;
+            color: white;
+            text-align: left;
+        }
+
+        .gradient-heading {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* New animations for "Why MasterNext?" section */
+        @keyframes enlargeAnimation {
+            0% { transform: scale(0.9); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-enlarge {
+            animation: enlargeAnimation 2s ease-in-out infinite alternate;
+        }
+        @keyframes rotateAnimation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(3deg); }
+        }
+        .animate-rotate {
+            animation: rotateAnimation 3s linear infinite;
+        }
+
+        /* Dark theme overrides for Our Expertise section */
+        :root[data-bs-theme="dark"] .development-section {
+            background-color: #1c1f24 !important;
+        }
+        :root[data-bs-theme="dark"] .development-section h2,
+        :root[data-bs-theme="dark"] .development-section p,
+        :root[data-bs-theme="dark"] .development-section .animated-card {
+            color: #ffffff !important;
+            background-color: #1c1f24 !important;
+            border-color: transparent !important;
+        }
+
+        /* Override "What Our Clients Say" heading to white */
+        .testimonials-section h2 {
+            color: #ffffff !important;
+            background: none !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+
+        /* New override for white text */
+        .white-heading {
+            color: #ffffff !important;
+            background: none !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+    </style>
+</head>
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16"></symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16"></symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16"></symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16"></symbol>
+    </svg>
+    <header class="bg-dark text-white text-center py-3 glass-header position-relative">
+        <div class="gif-background"></div> <!-- Add GIF background -->
+        <img src="Assets/MasterNext Light Logo.png" alt="MasterNext Logo" class="logo-top-left">
+        <h1>Welcome to MasterNext</h1>
+        <p class="interactive-text">
+            <marquee behavior="scroll" direction="left">
+                <span>We</span> <span>create</span> <span>tech</span> <span>solutions</span> <span>that</span> <span>tackle</span> <span>real-world</span> <span>problems,</span> 
+                <span>drive</span> <span>innovation,</span> <span>and</span> <span>empower</span> <span>people</span> <span>today</span> <span>while</span> <span>shaping</span> 
+                <span>a</span> <span>better</span> <span>tomorrow.</span>
+            </marquee>
+        </p>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggle = document.getElementById('bd-theme');
+            const themeIcons = document.querySelectorAll('.theme-icon-active');
+            const themeButtons = document.querySelectorAll('[data-bs-theme-value]');
+
+            themeButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const theme = this.getAttribute('data-bs-theme-value');
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+
+                    themeButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    themeIcons.forEach(icon => {
+                        icon.innerHTML = `<use href="#${theme === 'dark' ? 'moon-stars-fill' : theme === 'light' ? 'sun-fill' : 'circle-half'}"></use>`;
+                    });
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggle = document.createElement('div');
+            themeToggle.classList.add('theme-toggle');
+            themeToggle.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm0 17a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zm10-7a1 1 0 0 1-1 1h-2a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1zM5 12a1 1 0 0 1-1 1H2a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1zm14.071-7.071a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 0 1-1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0zM7.343 16.657a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 0 1-1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0zm12.728 1.414a1 1 0 0 1-1.414 0l-1.414-1.414a1 1 0 0 1 1.414-1.414l1.414 1.414a1 1 0 0 1 0 1.414zM6.343 6.343a1 1 0 0 1-1.414 0L3.515 4.929a1 1 0 0 1 1.414-1.414l1.414 1.414a1 1 0 0 1 0 1.414zM12 6a6 6 0 1 1 0 12 6 6 0 0 1 0-12z"/>
+                </svg>
+            `;
+            document.body.appendChild(themeToggle);
+
+            themeToggle.addEventListener('click', function () {
+                const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+                document.documentElement.setAttribute('data-bs-theme', isDark ? 'light' : 'dark');
+                themeToggle.classList.toggle('dark', !isDark);
+            });
+        });
+    </script>
+    
+    <nav class="navbar navbar-expand-md bg-dark sticky-top border-bottom" data-bs-theme="dark">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasLabel">MasterNext</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav flex-grow-1 justify-content-between">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="learning.html">Learning & Empowerment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="connect.html">Connect With Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+    
+<main>
+    <div class="hero-section enhanced-hero" style="position: relative; background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat; height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <!-- Gradient overlay -->
+        <div class="hero-overlay" style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.7));"></div>
+        <!-- Hero content -->
+        <div class="hero-content" style="position: relative; z-index: 2; text-align: center; color: white;">
+            <h1 class="display-3 fw-bold" style="animation: fadeInDown 1.5s ease-out;">Innovate with Purpose<br>Disrupt with Passion</h1>
+            <p class="lead" style="animation: fadeInUp 1.5s ease-out 0.5s; animation-fill-mode: both;">Transforming ideas into impactful digital solutions.</p>
+            <div class="hero-buttons" style="margin-top: 30px; animation: fadeInUp 1.5s ease-out 1s; animation-fill-mode: both;">
+                <a href="about.html" class="btn btn-primary me-3" style="padding: 15px 30px; font-size: 1.2rem;">Learn More</a>
+                <a href="connect.html" class="btn btn-outline-light" style="padding: 15px 30px; font-size: 1.2rem;">Get Started</a>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- ...existing code after hero-section... -->
+
+<style>
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-50px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .enhanced-hero { overflow: hidden; }
+</style>
+
+    <div class="container col-xxl-8 px-4 py-5 text-center position-relative">
+        <div class="decorative-element left-decor animate-slide-left"></div> <!-- Left animated decorative element -->
+        <div class="decorative-element right-decor animate-slide-right"></div> <!-- Right animated decorative element -->
+        <div class="row justify-content-center align-items-center g-5 py-5">
+            <div class="col-lg-8 gradient-card animate-fade-in animate-enlarge">
+                <h1 class="display-5 fw-bold text-white lh-1 mb-3 animate-slide-up animate-rotate">Why MasterNext?</h1>
+                <p class="lead text-white animate-fade-in-delayed animate-enlarge">
+                    We are more than a tech company—we are a movement. Our team is made up of thinkers, builders, and changemakers dedicated to solving real-world problems with creativity and code. We believe in technology that serves people, empowers learners, and brings ideas to life.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Section: Our Vision -->
+    <section class="py-5 glass-section text-center">
+    <div class="container">
+        <h2 class="display-5 fw-bold mb-4 gradient-heading">Our Vision</h2>
+        <p class="lead text-justify text-muted">
+            At MasterNext, we envision a world where technology bridges gaps, empowers communities, and drives sustainable innovation. 
+            Our mission is to create solutions that inspire, educate, and transform lives.
+        </p>
+        <div class="row mt-4">
+            <div class="col-md-12 mb-4">
+                <div class="card glass-card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title gradient-heading">Innovation</h5>
+                        <p class="card-text text-justify">
+                            We foster creativity to develop cutting-edge solutions for real-world challenges. 
+                            Our team thrives on pushing boundaries, exploring new ideas, and delivering impactful results that make a difference.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mb-4">
+                <div class="card glass-card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title gradient-heading">Empowerment</h5>
+                        <p class="card-text text-justify">
+                            We empower individuals and organizations to achieve their full potential through technology. 
+                            By providing tools, resources, and knowledge, we enable growth, success, and meaningful change.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card glass-card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title gradient-heading">Sustainability</h5>
+                        <p class="card-text text-justify">
+                            We are committed to building a sustainable future through responsible innovation. 
+                            Our solutions minimize environmental impact, promote long-term benefits, and drive positive change.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- New Section: Explore the Future -->
+<section class="py-5 futuristic-section text-center position-relative">
+    <div class="container">
+        <h2 class="display-5 fw-bold mb-4 gradient-heading">Explore the Future</h2>
+        <p class="lead text-muted">
+            Dive into the world of innovation with interactive Web Pages and a seamless user interface.
+        </p>
+        <div class="row mt-5">
+            <!-- Responsive Design -->
+            <div class="col-md-4">
+                <div class="futuristic-card">
+                    <div class="glow-animation"></div>
+                    <h5 class="mt-4">Responsive Design</h5>
+                    <p>We craft responsive and adaptive designs for seamless user experiences across all devices.</p>
+                </div>
+            </div>
+            <!-- Optimized Performance -->
+            <div class="col-md-4">
+                <div class="futuristic-card">
+                    <div class="wave-animation"></div>
+                    <h5 class="mt-4">Optimized Performance</h5>
+                    <p>Our solutions ensure fast loading times and smooth performance for enhanced user satisfaction.</p>
+                </div>
+            </div>
+            <!-- Scalable Solutions -->
+            <div class="col-md-4">
+                <div class="futuristic-card">
+                    <div class="orbit-animation"></div>
+                    <h5 class="mt-4">Scalable Solutions</h5>
+                    <p>We deliver scalable web development solutions tailored to grow with your business needs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- New Section: Our Expertise -->
+<section class="py-5 development-section text-center position-relative">
+    <div class="container">
+        <h2 class="display-4 fw-bold mb-5 gradient-heading">Our Expertise</h2>
+        <p class="lead text-muted mb-5">
+            Explore our cutting-edge solutions in software development, mobile apps, game applications, user-friendly web pages, and marketing web pages.
+        </p>
+        <div class="row g-5">
+            <!-- Software Development -->
+            <div class="col-md-6">
+                <div class="animated-card software-development">
+                    <div class="icon-animation"></div>
+                    <h3 class="mt-4">Software Development</h3>
+                    <p>
+                        We specialize in creating robust, scalable, and efficient software solutions tailored to meet your business needs. 
+                        From enterprise applications to custom software, we deliver excellence with every line of code.
+                    </p>
+                </div>
+            </div>
+            <!-- Mobile Apps -->
+            <div class="col-md-6">
+                <div class="animated-card mobile-apps">
+                    <div class="icon-animation"></div>
+                    <h3 class="mt-4">Mobile Apps</h3>
+                    <p>
+                        Our mobile app development services bring your ideas to life with intuitive designs and seamless functionality. 
+                        Whether it's iOS, Android, or cross-platform, we ensure your app stands out in the market.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-5 mt-5">
+            <!-- Game Applications -->
+            <div class="col-md-6">
+                <div class="animated-card game-applications">
+                    <div class="icon-animation"></div>
+                    <h3 class="mt-4">Game Applications</h3>
+                    <p>
+                        Dive into the world of gaming with our immersive game development services. 
+                        From casual games to complex 3D environments, we create experiences that captivate and engage players.
+                    </p>
+                </div>
+            </div>
+            <!-- User-Friendly Web Pages -->
+            <div class="col-md-6">
+                <div class="animated-card user-friendly-web">
+                    <div class="icon-animation"></div>
+                    <h3 class="mt-4">User-Friendly Web Pages</h3>
+                    <p>
+                        We design and develop web pages that are not only visually appealing but also highly intuitive and user-friendly. 
+                        Our focus is on delivering exceptional user experiences that drive engagement and conversions.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-5 mt-5">
+            <!-- Marketing Web Pages -->
+            <div class="col-md-12">
+                <div class="animated-card marketing-web">
+                    <div class="icon-animation"></div>
+                    <h3 class="mt-4">Marketing Web Pages</h3>
+                    <p>
+                        Boost your online presence with our marketing web pages designed to attract, engage, and convert visitors. 
+                        From landing pages to full-fledged marketing websites, we help you achieve your business goals.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Combined Section: Empowering Innovation and Shaping the Future -->
+<section class="py-5 combined-section text-center position-relative">
+    <div class="container">
+        <!-- Changed heading class to white-heading for white text -->
+        <h2 class="display-5 fw-bold mb-4 white-heading">Empowering Innovation & Shaping the Future</h2>
+        <p class="lead text-light">
+            At MasterNext, we empower businesses and individuals to innovate and thrive in a technology-driven world while shaping a better future with transformative ideas and technologies.
+        </p>
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="combined-card">
+                    <div class="card-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h5 class="mt-4">Technology Empowerment</h5>
+                    <p>We provide cutting-edge tools and solutions to help businesses harness the power of technology.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="combined-card">
+                    <div class="card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h5 class="mt-4">Creative Solutions</h5>
+                    <p>Our team delivers creative and impactful solutions that drive innovation and growth.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="combined-card">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h5 class="mt-4">Innovation</h5>
+                    <p>We drive innovation to create impactful solutions for tomorrow's challenges.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="combined-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h5 class="mt-4">Collaboration</h5>
+                    <p>Our collaborative approach ensures success through teamwork and shared vision.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="combined-card">
+                    <div class="card-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h5 class="mt-4">Sustainability</h5>
+                    <p>We prioritize sustainable practices to build a better and greener future.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- New Section: Client Logos and Trust Signals -->
+<section class="client-logos-section py-5">
+    <div class="container text-center">
+        <h2 class="gradient-heading mb-4">Trusted By</h2>
+        <div class="row justify-content-center">
+            <!-- Placeholder Client Logos -->
+            <div class="col-md-2 col-4">
+                <div class="logo-card">
+                    <img src="Assets/MasterNext Dark Logo.png" alt="Client Logo 1" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-2 col-4">
+                <div class="logo-card">
+                    <img src="Assets/MasterNext Logo with Tagline.png" alt="Client Logo 4" class="img-fluid">
+                </div>
+            </div>
+            
+            <div class="col-md-2 col-4">
+                <div class="logo-card">
+                    <img src="Assets/MasterNext Dark Logo.png" alt="Client Logo 3" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-2 col-4">
+                <div class="logo-card">
+                    <img src="Assets/MasterNext Logo with Tagline.png" alt="Client Logo 2" class="img-fluid">
+                </div>
+            </div>
+            
+        </div>
+        <h3 class="gradient-heading mt-5">Certifications & Awards</h3>
+        <div class="row justify-content-center mt-4">
+            <!-- Placeholder Certification Badges -->
+            <div class="col-md-2 col-4">
+                <div class="badge-card">
+                    <img src="Assets/MasterNext Text Logo Dark with Tagline.png" alt="Certification 1" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-2 col-4">
+                <div class="badge-card">
+                    <img src="Assets/MasterNext Text Logo Dark with Tagline.png" alt="Certification 2" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-2 col-4">
+                <div class="badge-card">
+                    <img src="Assets/MasterNext Text Logo Dark with Tagline.png" alt="Certification 3" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Enhanced Section: Testimonials / Reviews -->
+<section class="testimonials-section py-5 position-relative">
+    <div class="container text-center">
+        <h2 class="gradient-heading mb-4">What Our Clients Say</h2>
+        <p class="lead text-muted mb-5">
+            Hear from our happy clients who have experienced the MasterNext difference.
+        </p>
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Testimonial 1 -->
+                <div class="carousel-item active">
+                    <div class="testimonial-card mx-auto">
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">
+                                "MasterNext transformed our business with their innovative solutions. Their team is professional, creative, and highly skilled."
+                            </p>
+                            <h5 class="testimonial-author">- John Doe</h5>
+                            <p class="testimonial-role">CEO, TechCorp</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="carousel-item">
+                    <div class="testimonial-card mx-auto">
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">
+                                "The team at MasterNext exceeded our expectations. Their attention to detail and commitment to excellence are unmatched."
+                            </p>
+                            <h5 class="testimonial-author">- Jane Smith</h5>
+                            <p class="testimonial-role">Founder, InnovateNow</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="carousel-item">
+                    <div class="testimonial-card mx-auto">
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">
+                                "Working with MasterNext was a game-changer for us. Their expertise and innovative approach helped us achieve our goals."
+                            </p>
+                            <h5 class="testimonial-author">- Michael Brown</h5>
+                            <p class="testimonial-role">CTO, FutureTech</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" style="top: -20%;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" style="top: -20%;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- New Section: Call-To-Action (CTA) Section -->
+<section class="cta-section py-5 position-relative">
+    <div class="cta-background" style="background: url('https://via.placeholder.com/1920x1080') no-repeat center center; background-size: cover; will-change: transform;"></div>
+    <div class="container text-center position-relative" style="z-index: 1; color: black;"> <!-- Changed text color to black -->
+        <h2 class="display-5 fw-bold mb-4">Ready to Transform Your Vision?</h2>
+        <p class="lead mb-5">
+            Partner with MasterNext to bring your ideas to life. Whether you're looking for innovative solutions, expert guidance, or cutting-edge technology, we're here to help.
+        </p>
+
+        <!-- FAQ Section -->
+        <div class="faq mt-5">
+            <h3 class="fw-bold mb-4">Frequently Asked Questions</h3>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                            What services does MasterNext offer?
+                        </button>
+                    </h2>
+                    <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            MasterNext offers a wide range of services, including software development, mobile app development, web design, and digital marketing solutions.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            How can I book a demo?
+                        </button>
+                    </h2>
+                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            You can book a demo by clicking the "Book a Demo" button above and filling out the form with your details.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            How do I get a quote for my project?
+                        </button>
+                    </h2>
+                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            To get a quote, click the "Get a Quote" button and provide details about your project. Our team will get back to you with a customized quote.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Us, Book a Demo Cards -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-4">
+                <div class="cta-card p-4 text-center">
+                    <i class="fas fa-envelope fa-3x mb-3"></i>
+                    <h5 class="cta-title">Contact Us</h5>
+                    <p class="cta-text">Reach out to our team for personalized assistance and expert advice.</p>
+                    <a href="tel:+918333851267" class="btn btn-primary btn-sm">Get in Touch</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="cta-card p-4 text-center">
+                    <i class="fas fa-calendar-alt fa-3x mb-3"></i>
+                    <h5 class="cta-title">Book a Demo</h5>
+                    <p class="cta-text">Experience our solutions in action by scheduling a live demo.</p>
+                    <a href="#demo" class="btn btn-outline-light btn-sm">Schedule Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .cta-section {
+        position: relative;
+        overflow: hidden;
+        color: white;
+    }
+
+    .cta-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.3s ease-out;
+        filter: brightness(0.7);
+    }
+
+    .cta-card, .testimonial-card {
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 15px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding: 20px;
+    }
+
+    .cta-card:hover, .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .cta-card i {
+        color: #ffd700;
+        animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+    }
+
+    .cta-section .btn {
+        border-radius: 50px;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .cta-section .btn:hover {
+        transform: scale(1.1);
+    }
+
+    .faq .accordion-button {
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        border: none;
+        font-weight: bold;
+    }
+
+    .faq .accordion-button:focus {
+        box-shadow: none;
+    }
+
+    .faq .accordion-body {
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        border-radius: 10px;
+        padding: 15px;
+    }
+
+    .testimonials h3, .faq h3 {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .cta-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add subtle shadow for better visibility */
+    }
+
+    .cta-text {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.9); /* Slightly lighter text color for readability */
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Add subtle shadow for better visibility */
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const ctaBackground = document.querySelector('.cta-background');
+
+        window.addEventListener('scroll', function () {
+            const scrollPosition = window.scrollY;
+            ctaBackground.style.transform = `translate3d(0, ${scrollPosition * 0.2}px, 0)`;
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const hiddenSections = document.querySelectorAll('.hidden-section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible-section');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        hiddenSections.forEach(section => observer.observe(section));
+    });
+</script>
+
+    <!-- Chatbot Icon -->
+    <div id="chatbot-toggle" class="chatbot-toggle" title="Chat with us">🤖</div>
+
+    <!-- Chatbot Container -->
+    <div id="chatbot-container" class="chatbot-container">
+        <div class="chatbot-header">
+            <span>MasterNext AI Assistant</span>
+            <button id="chatbot-close" class="chatbot-close">&times;</button>
+        </div>
+        <div class="chatbot-body">
+            <div id="chatbot-messages" class="chatbot-messages"></div>
+            <div class="chatbot-input-container">
+                <input id="chatbot-input" type="text" placeholder="Ask me anything..." />
+                <button id="chatbot-send" class="chatbot-send">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+   
+    <script defer="" src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <footer class="bg-dark text-white py-5" style="background-color: rgb(8 30 52) !important;">
+    <div class="container">
+        <div class="row">
+            <!-- Quick Links -->
+            <div class="col-md-4">
+                <h5 class="fw-bold mb-3">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
+                    <li><a href="products.html" class="text-white text-decoration-none">Products</a></li>
+                    <li><a href="services.html" class="text-white text-decoration-none">Services</a></li>
+                    <li><a href="learning.html" class="text-white text-decoration-none">Learning & Empowerment</a></li>
+                    <li><a href="connect.html" class="text-white text-decoration-none">Connect With Us</a></li>
+                </ul>
+            </div>
+            <!-- Social Media Links -->
+            <div class="col-md-4 text-center">
+                <h5 class="fw-bold mb-3">Follow Us</h5>
+                <a href="https://facebook.com" target="_blank" class="text-white me-3">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="text-white me-3">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="text-white" style="text-decoration:none;">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://www.instagram.com/masternext.in/?utm_source=ig_web_button_share_sheet" target="_blank" class="text-white me-3" style="text-decoration:none;">
+                    <i class="fab fa-instagram fa-2x"></i>Instagram
+                </a>
+                <a href="https://www.linkedin.com/company/masternext-technologies-private-limited/" target="_blank" class="text-white" style="text-decoration:none;">
+                    <i class="fab fa-linkedin fa-2x"></i>LinkedIn
+                </a>
+            </div>
+            <!-- Contact Information -->
+            <div class="col-md-4">
+                <h5 class="fw-bold mb-3">Contact Information</h5>
+                <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>123 Tech Street, Ongole, Andhra Pradesh, India</p>
+                <p class="mb-1"><i class="fas fa-phone-alt me-2"></i>+91 123456789</p>
+                <p class="mb-0"><i class="fas fa-envelope me-2"></i>info@masternext.com</p>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <p class="mb-0">&copy; 2025 MasterNext Technologies. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

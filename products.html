@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - MasterNext</title>
+    <!-- Bootstrap CSS -->
+    <link rel="icon" href="Assets/MasterNext Light Logo.png" type="image/png" sizes="200x200" style="background-color: #ffffff; border-radius: 50%;">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Added Google Fonts link for Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global font override */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .navbar {
+            background-color: #001f3f; /* Navy blue background */
+        }
+
+        .navbar .navbar-brand img {
+            width: 150px;
+        }
+
+        .navbar .nav-link {
+            color: white !important;
+            text-decoration: none !important; /* Remove underline */
+        }
+
+        .navbar .nav-link.active {
+            font-weight: bold;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body takes the full height of the viewport */
+            padding-top: 150px; /* Ensure content is below the fixed navbar */
+            background-color: #f8f9fa; /* Light background for better visibility */
+        }
+
+        .container {
+            flex: 1; /* Allow the main content to take up remaining space */
+        }
+
+        footer {
+            background-color: #001f3f; /* Navy blue background */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .bg-navy {
+            background-color: #001f3f; /* Navy blue background */
+        }
+
+        .animate-section {
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .animate-card {
+            animation: zoomIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animate-fade {
+            animation: fadeIn 1.5s ease-in-out;
+            background: rgba(0, 0, 0, 0.05); /* Transparent background */
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .animate-slide {
+            animation: slideIn 1.5s ease-in-out;
+            background: rgba(0, 0, 0, 0.05); /* Transparent background */
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .animate-zoom {
+            animation: zoomIn 1.5s ease-in-out;
+            background: rgba(0, 0, 0, 0.05); /* Transparent background */
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .animate-bounce {
+            animation: bounceIn 1.5s ease-in-out;
+            background: rgba(0, 0, 0, 0.05); /* Transparent background */
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px); /* Slide in from the left */
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px); /* Bounce in from above */
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(10px); /* Bounce effect */
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .animate-dark {
+            animation: fadeInDark 1.5s ease-in-out;
+            background: rgba(0, 0, 0, 0.9); /* Dark transparent background */
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        @keyframes fadeInDark {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-dark-transparent {
+            animation: fadeInDarkTransparent 1.5s ease-in-out;
+            background: rgba(0, 0, 0, 0.7); /* Transparent dark background */
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        @keyframes fadeInDarkTransparent {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .blur-card {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blurred-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.5); /* Blurred text color */
+            filter: blur(2px); /* Apply blur effect */
+            transition: filter 0.3s ease, color 0.3s ease;
+        }
+
+        .blur-card:hover .blurred-text {
+            filter: blur(0); /* Remove blur on hover */
+            color: rgba(255, 255, 255, 1); /* Fully visible text on hover */
+        }
+
+        @media (max-width: 576px) {
+            .navbar .navbar-brand img {
+                width: 80px !important; /* Force logo to 80px on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="products.html">
+                <img src="Assets/MasterNext Light Logo.png" alt="MasterNext Logo" style="width: 150px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                  
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <section class="py-5 text-center animate-dark-transparent">
+            <h1 class="fw-bold text-light">Our Products</h1>
+            <p class="text-light">
+                Explore our innovative products designed to meet your needs and drive success.
+            </p>
+        </section>
+
+        <!-- Section 1: Introduction -->
+        <section class="py-5 text-center animate-fade">
+            <h2 class="fw-bold text-primary">Digital Solutions That Drive Results</h2>
+            <p class="text-muted">
+                Smart, Scalable, Impactful.<br>
+                Our products are designed to meet the needs of today’s digital-first world. Each solution we create is crafted with usability, scalability, and innovation in mind.
+            </p>
+        </section>
+
+        <!-- Section 2: Product Categories -->
+        <section class="py-5">
+            <div class="row text-center">
+                <div class="col-md-6 mb-4 animate-slide">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Custom Digital Business Solutions</h5>
+                            <p class="card-text">
+                                Tailor-made platforms that enable digital transformation for startups and enterprises.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 animate-slide">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Mobile Apps Solving Real Problems</h5>
+                            <p class="card-text">
+                                Intuitive apps developed to enhance daily life, streamline services, and increase user engagement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 animate-zoom">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Data Tracking & Analysis Systems</h5>
+                            <p class="card-text">
+                                AI-integrated tools to track performance, analyze trends, and support data-driven decisions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 animate-zoom">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Game Design & Development for Learning</h5>
+                            <p class="card-text">
+                                Educational games that make learning interactive, fun, and impactful.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Why Choose Our Products -->
+        <section class="py-5 text-center">
+            <div class="container">
+                <h3 class="fw-bold text-navy mb-4">Why Choose Our Products?</h3>
+                <div class="blur-card bg-navy text-light p-4 mb-3">
+                    <p class="blurred-text">
+                        Our <strong>digital solutions for business</strong> are designed to empower startups and enterprises with scalable platforms that drive growth and innovation.
+                    </p>
+                </div>
+                <div class="blur-card bg-navy text-light p-4 mb-3">
+                    <p class="blurred-text">
+                        We specialize in <strong>mobile app development in India</strong>, creating intuitive apps that solve real-world problems and enhance user engagement.
+                    </p>
+                </div>
+                <div class="blur-card bg-navy text-light p-4 mb-3">
+                    <p class="blurred-text">
+                        Our <strong>data analytics tools</strong> provide AI-powered insights to help businesses track performance, analyze trends, and make data-driven decisions.
+                    </p>
+                </div>
+                <div class="blur-card bg-navy text-light p-4 mb-3">
+                    <p class="blurred-text">
+                        With our expertise in <strong>educational games</strong>, we develop interactive and fun learning experiences that make education impactful and engaging.
+                    </p>
+                </div>
+                <div class="blur-card bg-navy text-light p-4">
+                    <p class="blurred-text">
+                        From <strong>real-world tech apps</strong> to innovative solutions, we are committed to delivering products that transform ideas into reality.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-4">
+        <div class=" text-center" style="margin-bottom: 20px;" >
+            <h5 class="fw-bold mb-1">Follow Us</h5>
+            <a href="https://facebook.com" target="_blank" class="text-white me-3"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://twitter.com" target="_blank" class="text-white me-3"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="text-white"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://www.instagram.com/masternext.in/?utm_source=ig_web_button_share_sheet" target="_blank" class="text-white me-3" style="text-decoration:none;">
+                <i class="fab fa-instagram fa-2x"></i>Instagram
+            </a>
+            <a href="https://www.linkedin.com/company/masternext-technologies-private-limited/" target="_blank" class="text-white" style="text-decoration:none;">
+                <i class="fab fa-linkedin fa-2x"></i>LinkedIn
+            </a>
+        </div>
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 MasterNext Technologies. All rights reserved.</p>
+            <p class="mb-0">
+                <a href="index.html" class="text-white" style="text-decoration:none;">Home</a> | 
+                <a href="services.html" class="text-white" style="text-decoration:none;">Services</a> | 
+                <a href="about.html" class="text-white" style="text-decoration:none;">About Us</a> | 
+                <a href="connect.html" class="text-white" style="text-decoration:none;">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

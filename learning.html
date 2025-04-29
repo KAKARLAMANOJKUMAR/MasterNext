@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore learning opportunities with MasterNext Technologies, including courses, tutorials, and resources.">
+    <meta name="keywords" content="Learning, Courses, Tutorials, MasterNext Learning">
+    <meta name="author" content="MasterNext Technologies">
+    <title>Learning - MasterNext</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Assets/MasterNext Light Logo.png" type="image/png" sizes="200x200" style="background-color: #ffffff; border-radius: 50%;">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Added Google Fonts link for Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global font override */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .navbar {
+            background-color: #001f3f; /* Navy blue background */
+        }
+
+        .navbar .navbar-brand img {
+            width: 150px;
+        }
+
+        .navbar .nav-link {
+            color: white !important;
+            text-decoration: none !important; /* Remove underline */
+        }
+
+        .navbar .nav-link.active {
+            font-weight: bold;
+        }
+
+        body {
+            padding-top: 150px; /* Ensure content is below the fixed navbar */
+            background-color: #f8f9fa; /* Light background for better visibility */
+        }
+
+        .bg-navy {
+            background-color: #001f3f; /* Navy blue background */
+        }
+
+        .gradient-heading {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(12px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .animate-slide {
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        .animate-fade {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .animate-zoom {
+            animation: zoomIn 1.5s ease-in-out;
+        }
+
+        .animate-bounce {
+            animation: bounceIn 1.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .section-heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: fadeInDown 1.5s ease-in-out;
+        }
+
+        .section-content {
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dark-transparent-bg {
+            background: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+            color: white; /* Ensure text is visible */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .dark-transparent-bg h2,
+        .dark-transparent-bg p {
+            color: white; /* Ensure text is visible on dark background */
+        }
+
+        .hidden-section {
+            opacity: 0;
+            transform: translateY(20px);
+            visibility: hidden; /* Ensure the section is hidden */
+            transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+        }
+
+        .visible-section {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible; /* Make the section visible */
+        }
+
+        .dynamic-content {
+            display: none;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        .dynamic-content.active {
+            display: block;
+        }
+
+        .loading-image {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .loading-image img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .loading-image.active {
+            display: block;
+        }
+
+        .loading-text {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #6a11cb;
+        }
+
+        .loading-text.active {
+            display: block;
+        }
+
+        @media (max-width: 576px) {
+            .navbar .navbar-brand img {
+                width: 80px !important; /* Force logo to 80px on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="learning.html">
+                <img src="Assets/MasterNext Light Logo.png" alt="MasterNext Logo" style="width: 150px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="py-5 text-center position-relative" style="overflow: hidden;">
+        <div class="container position-relative" style="background: linear-gradient(135deg, #6a11cb, #2575fc); padding: 50px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); color: white;">
+            <h2 class="display-5 fw-bold mb-4 animate-fade">Welcome to MasterNext Learning</h2>
+            <p class="lead animate-slide">
+                Discover a variety of courses, tutorials, and resources to enhance your skills and knowledge.
+            </p>
+        </div>
+        <!-- Decorative Element -->
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%); pointer-events: none;"></div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="display-6 fw-bold text-center gradient-heading">Learning & Empowerment | Tech Education for the Future</h2>
+            <p class="text-center lead">Inspire. Learn. Build.</p>
+            <p class="text-center text-dark">
+                At MasterNext, education is a core value. We empower students by providing industry-aligned training and real-world project experience in software development, game design, and emerging tech.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section: Tech Education in India -->
+    <section class="py-5 text-center bg-light hidden-section">
+        <div class="container glass-effect">
+            <h2 class="section-heading gradient-heading">Tech Education in India</h2>
+            <p class="lead section-content text-justify text-dark">
+                India is emerging as a global hub for technology education. At MasterNext, we are committed to providing cutting-edge training programs that align with industry standards. 
+                Our courses are designed to equip students with the skills needed to excel in the tech-driven world. From coding bootcamps to advanced AI workshops, we ensure that every learner is prepared for the challenges of tomorrow.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section: Game Development Courses -->
+    <section class="py-5 text-center bg-light hidden-section">
+        <div class="container glass-effect">
+            <h2 class="section-heading gradient-heading">Game Development Courses</h2>
+            <p class="lead section-content text-justify text-dark">
+                Dive into the exciting world of game development with our specialized courses. Learn the art of storytelling, character design, and interactive gameplay creation. 
+                Our courses cover everything from basic game mechanics to advanced programming techniques, ensuring that students are well-equipped to create engaging and innovative games.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section: AI Bootcamps -->
+    <section class="py-5 text-center bg-light hidden-section">
+        <div class="container glass-effect">
+            <h2 class="section-heading gradient-heading">AI Bootcamps</h2>
+            <p class="lead section-content text-justify text-dark">
+                Join our AI bootcamps to explore the fascinating world of Artificial Intelligence. Learn how to build intelligent systems, train machine learning models, and deploy AI solutions. 
+                Our bootcamps are designed for beginners and professionals alike, offering a comprehensive learning experience that combines theory with practical implementation.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-heading">Programming Tutorials</h5>
+                            <p class="card-text">
+                                Learn programming languages like Python, JavaScript, and more with our step-by-step tutorials.
+                            </p>
+                            <button class="btn btn-primary explore-btn" data-target="programming-content">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-heading">AI & ML Courses</h5>
+                            <p class="card-text">
+                                Dive into the world of Artificial Intelligence and Machine Learning with our expert-led courses.
+                            </p>
+                            <button class="btn btn-primary explore-btn" data-target="ai-content">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-heading">Web Development</h5>
+                            <p class="card-text">
+                                Build modern, responsive websites with our comprehensive web development resources.
+                            </p>
+                            <button class="btn btn-primary explore-btn" data-target="web-content">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-heading">Tech Education in India</h5>
+                            <p class="card-text">
+                                Learn about India's rise as a global hub for technology education and industry-aligned training programs.
+                            </p>
+                            <button class="btn btn-primary explore-btn" data-target="tech-education-content">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-heading">Student Workshops</h5>
+                            <p class="card-text">
+                                Hands-on workshops for students to gain practical experience in game development, web design, and AI.
+                            </p>
+                            <button class="btn btn-primary explore-btn" data-target="student-workshops-content">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-heading">Real-World Tech Training</h5>
+                            <p class="card-text">
+                                Work on real-world projects to build scalable web applications and deploy AI models.
+                            </p>
+                            <button class="btn btn-primary explore-btn" data-target="real-world-tech-content">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-heading">AI Bootcamps</h5>
+                            <p class="card-text">
+                                Explore AI bootcamps to learn about building intelligent systems and deploying machine learning models.
+                            </p>
+                            <button class="btn btn-primary explore-btn" data-target="ai-bootcamps-content">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-heading">Cloud Computing</h5>
+                            <p class="card-text">
+                                Learn the fundamentals of cloud platforms like AWS, Azure, and Google Cloud. Build scalable and secure cloud-based solutions.
+                            </p>
+                            <button class="btn btn-primary explore-btn" data-target="cloud-computing-content">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-heading">Cybersecurity</h5>
+                            <p class="card-text">
+                                Master the skills to protect systems and networks. Learn about ethical hacking, penetration testing, and security protocols.
+                            </p>
+                            <button class="btn btn-primary explore-btn" data-target="cybersecurity-content">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-heading">Data Science</h5>
+                            <p class="card-text">
+                                Dive into data analysis, visualization, and machine learning. Learn to extract insights from data using Python and R.
+                            </p>
+                            <button class="btn btn-primary explore-btn" data-target="data-science-content">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-heading">Mobile App Development</h5>
+                            <p class="card-text">
+                                Build mobile applications for Android and iOS using Flutter, React Native, and native development tools.
+                            </p>
+                            <button class="btn btn-primary explore-btn" data-target="mobile-app-content">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title gradient-heading">Blockchain Technology</h5>
+                            <p class="card-text">
+                                Understand blockchain fundamentals, smart contracts, and decentralized applications (DApps) development.
+                            </p>
+                            <button class="btn btn-primary explore-btn" data-target="blockchain-content">Explore</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Content Section -->
+    <section id="dynamic-content" class="dynamic-content">
+        <div id="programming-content" class="content-section">
+            <h3>Programming Tutorials</h3>
+            <p>Explore in-depth tutorials on Python, JavaScript, and other programming languages. Learn coding best practices, algorithms, and real-world applications.</p>
+        </div>
+        <div id="ai-content" class="content-section">
+            <h3>AI & ML Courses</h3>
+            <p>Discover the fundamentals of Artificial Intelligence and Machine Learning. Build intelligent systems and explore real-world AI applications.</p>
+        </div>
+        <div id="web-content" class="content-section">
+            <h3>Web Development</h3>
+            <p>Master the art of creating responsive and modern websites. Learn HTML, CSS, JavaScript, and frameworks like React and Angular.</p>
+        </div>
+        <div id="tech-education-content" class="content-section">
+            <h3>Tech Education in India</h3>
+            <p>India is becoming a global hub for technology education. Learn about the latest trends, industry-aligned training programs, and opportunities for students to excel in the tech-driven world.</p>
+        </div>
+        <div id="student-workshops-content" class="content-section">
+            <h3>Student Workshops</h3>
+            <p>Participate in hands-on workshops designed for students. Gain practical experience in game development, web design, and AI, led by industry professionals.</p>
+        </div>
+        <div id="game-development-content" class="content-section">
+            <h3>Game Development Courses</h3>
+            <p>Learn the art of storytelling, character design, and interactive gameplay creation. Build immersive games using advanced programming techniques.</p>
+        </div>
+        <div id="real-world-tech-content" class="content-section">
+            <h3>Real-World Tech Training</h3>
+            <p>Bridge the gap between theoretical knowledge and practical application. Work on real-world projects to build scalable web applications and deploy AI models.</p>
+        </div>
+        <div id="ai-bootcamps-content" class="content-section">
+            <h3>AI Bootcamps</h3>
+            <p>Join our AI bootcamps to explore the fascinating world of Artificial Intelligence. Learn to build intelligent systems and deploy machine learning models.</p>
+        </div>
+        <div id="cloud-computing-content" class="content-section">
+            <h3>Cloud Computing</h3>
+            <p>Learn to design, deploy, and manage cloud-based solutions using platforms like AWS, Azure, and Google Cloud. Gain expertise in cloud architecture and security.</p>
+        </div>
+        <div id="cybersecurity-content" class="content-section">
+            <h3>Cybersecurity</h3>
+            <p>Protect systems and networks from cyber threats. Learn ethical hacking, penetration testing, and advanced security protocols to safeguard digital assets.</p>
+        </div>
+        <div id="data-science-content" class="content-section">
+            <h3>Data Science</h3>
+            <p>Analyze and visualize data to uncover insights. Learn machine learning, statistical modeling, and data manipulation using Python, R, and popular libraries.</p>
+        </div>
+        <div id="mobile-app-content" class="content-section">
+            <h3>Mobile App Development</h3>
+            <p>Build cross-platform mobile applications using Flutter and React Native. Learn native development for Android and iOS to create high-performance apps.</p>
+        </div>
+        <div id="blockchain-content" class="content-section">
+            <h3>Blockchain Technology</h3>
+            <p>Explore blockchain fundamentals, smart contracts, and decentralized applications (DApps). Learn to develop secure and scalable blockchain solutions.</p>
+        </div>
+        <div class="loading-text" id="loading-text">
+            Course is loading soon...
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-4">
+        <div class=" text-center" style="margin-bottom: 20px;" >
+            <h5 class="fw-bold mb-1">Follow Us</h5>
+            <a href="https://facebook.com" target="_blank" class="text-white me-3"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://twitter.com" target="_blank" class="text-white me-3"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="text-white"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://www.instagram.com/masternext.in/?utm_source=ig_web_button_share_sheet" target="_blank" class="text-white me-3" style="text-decoration:none;">
+                <i class="fab fa-instagram fa-2x"></i>Instagram
+            </a>
+            <a href="https://www.linkedin.com/company/masternext-technologies-private-limited/" target="_blank" class="text-white" style="text-decoration:none;">
+                <i class="fab fa-linkedin fa-2x"></i>LinkedIn
+            </a>
+        </div>
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 MasterNext Technologies. All rights reserved.</p>
+            <p class="mb-0">
+                <a href="index.html" class="text-white" style="text-decoration:none;">Home</a> | 
+                <a href="about.html" class="text-white" style="text-decoration:none;">About Us</a> | 
+                <a href="products.html" class="text-white" style="text-decoration:none;">Products</a> | 
+                <a href="connect.html" class="text-white" style="text-decoration:none;">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hiddenSections = document.querySelectorAll('.hidden-section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+                        entry.target.classList.add('visible-section');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 }); // Trigger when the section reaches the center (50% visibility)
+
+            hiddenSections.forEach(section => observer.observe(section));
+
+            const exploreButtons = document.querySelectorAll('.explore-btn');
+            const dynamicContent = document.getElementById('dynamic-content');
+            const contentSections = document.querySelectorAll('.content-section');
+            const loadingText = document.getElementById('loading-text');
+
+            exploreButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+
+                    // Hide all content sections
+                    contentSections.forEach(section => section.style.display = 'none');
+
+                    // Show the target content section
+                    document.getElementById(targetId).style.display = 'block';
+
+                    // Make the dynamic content section visible
+                    dynamicContent.classList.add('active');
+
+                    // Scroll to the dynamic content section
+                    dynamicContent.scrollIntoView({ behavior: 'smooth' });
+
+                    // Show loading text after the content section
+                    setTimeout(() => {
+                        loadingText.classList.add('active');
+                    }, 500); // Delay to show loading text after content
+                });
+            });
+        });
+    </script>
+</body>
+</html>

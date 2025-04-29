@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Connect with MasterNext Technologies for inquiries, support, and collaboration opportunities.">
+    <meta name="keywords" content="Contact, Connect, MasterNext">
+    <meta name="author" content="MasterNext Technologies">
+    <title>Connect - MasterNext</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Assets/MasterNext Light Logo.png" type="image/png" sizes="200x200" style="background-color: #ffffff; border-radius: 50%;">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Added Google Fonts link for Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles for entire page */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa, #e0f7fa);
+            color: #333;
+            margin: 0;
+            padding-top: 80px; /* to prevent overlap with fixed navbar */
+        }
+        a {
+            color: #0066cc;
+        }
+        h1, h2, h3 {
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 60px 0;
+        }
+        /* Existing CSS */
+        .gradient-heading {
+            background: linear-gradient(90deg, #000000, #000000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .animate-fade {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .animate-slide {
+            animation: slideIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        /* New CSS for special animations and design */
+        @keyframes specialBounce {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-special {
+            animation: specialBounce 1s ease-in-out;
+        }
+        @keyframes pageAnimation {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-page {
+            animation: pageAnimation 1.5s ease-in-out;
+        }
+        .justify-text {
+            text-align: justify;
+        }
+        .special-design {
+            border: 2px solid #001f3f;
+            border-radius: 25px; /* updated border radius */
+            padding: 2rem;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            margin: auto;
+            max-width: 600px;
+        }
+        /* Additional Styling for Cards */
+        .card {
+            border: none;
+            border-radius: 25px; /* updated border radius */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        /* Navbar improvements */
+        .navbar {
+            background: #001f3f;
+        }
+        .navbar .nav-link {
+            color: #fff !important;
+        }
+        .navbar .nav-link:hover {
+            color: #fff !important;
+        }
+        /* Footer improvements */
+        footer {
+            background: #001f3f;
+            padding: 20px 0;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            /* Force smaller logo size on mobile */
+            .navbar-brand img {
+                width: 80px !important;
+            }
+            /* Adjust section padding for mobile */
+            section {
+                padding: 40px 0;
+            }
+            /* Improve special design container on mobile */
+            .special-design {
+                padding: 1.5rem;
+                max-width: 90%;
+            }
+            /* Optionally adjust card icon sizes */
+            .card i {
+                font-size: 2rem;
+            }
+            .container.text-center ul {
+                font-size: 14px; /* reduce font size for list items */
+            }
+            h2 {
+                font-size: 20px; /* adjust heading size for mobile */
+            }
+            /* Optional: reduce margins/padding in the opportunities section */
+            section.bg-light {
+                padding: 30px 0;
+            }
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animated-bg {
+            background: linear-gradient(-45deg, #9cdc54, #fff, #ffc107, #f8f9fa);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes bgTextAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .special-bg-text {
+            background: linear-gradient(-45deg, #ff0000, #00ff00, #0000ff);
+            background-size: 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: bgTextAnimation 5s linear infinite;
+        }
+        @keyframes homeBounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        .home-animate {
+            animation: homeBounce 2s infinite;
+        }
+    </style>
+</head>
+<body class="animate-page">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top" style="background-color: #001f3f;">
+        <div class="container">
+            <a class="navbar-brand" href="connect.html">
+                <img src="Assets/MasterNext Light Logo.png" alt="MasterNext Logo" style="width: 150px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link home-animate" href="index.html">Home</a>
+                    </li>
+                  
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="py-5 position-relative" style="margin-top: 20px; background-color: #f8f9fa;">
+        <div class="container position-relative">
+            <!-- Updated main content container with special animated text -->
+            <div class="p-5 text-center">
+                <h1 class="animate-fade">
+                    <span class="special-bg-text">Connect With Us | Let’s Build Together</span> <br>
+                 
+                </h1>
+                <p class="lead animate-fade">Collaborate. Innovate. Transform.</p>
+                <p class="animate-slide">
+                    Whether you're a startup seeking digital transformation, a student eager to learn, or a partner ready to innovate, MasterNext Technologies is ready to collaborate with you.
+                    Let’s build something meaningful—together.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Special Keywords Section as Second Section -->
+    <section class="py-5 bg-light">
+        <div class="container animated-bg" style="padding: 30px; text-align: center;">
+            <h2 class="animate-fade">Explore More Opportunities</h2>
+            <ul class="list-unstyled" style="padding: 20px;">
+                <li class="animate-slide">For effective communication, connect with a tech company that's leading innovation in India.</li>
+                <li class="animate-slide">Partner with a leading AI firm to harness cutting-edge solutions and drive progress.</li>
+                <li class="animate-slide">Discover student technology programs that empower the innovators of tomorrow.</li>
+                <li class="animate-slide">Collaborate with innovation partners to transform ideas into groundbreaking advancements.</li>
+                <li class="animate-slide">Work with a top digital agency in India to elevate your brand's digital presence.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section: Contact Information -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <!-- Email Us Card -->
+                <div class="col-md-4 text-center animate-slide">
+                    <div class="card shadow-sm border-0" style="background: linear-gradient(135deg, #e0f7fa, #fff);">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <i class="bi bi-envelope-fill" style="font-size: 2.5rem; color: #6a11cb;"></i>
+                            </div>
+                            <h3 class="card-title">Email Us</h3>
+                            <p class="card-text">
+                               Reach out to our AI-powered support team at <br>
+                               <a href="mailto:hello@masternext.in" class="text-decoration-none fw-bold">📧 hello@masternext.in</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Visit Our Website Card -->
+                <div class="col-md-4 text-center animate-slide">
+                    <div class="card shadow-sm border-0" style="background: linear-gradient(135deg, #f1f8e9, #fff);">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <i class="bi bi-globe" style="font-size: 2.5rem; color: #43a047;"></i>
+                            </div>
+                            <h3 class="card-title">Visit Our Website</h3>
+                            <p class="card-text">
+                               Explore our innovative digital platform for insights and trends.<br>
+                               <a href="https://www.masternext.in" target="_blank" class="text-decoration-none fw-bold">🌐 www.masternext.in</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Get in Touch Card -->
+                <div class="col-md-4 text-center animate-slide">
+                    <div class="card shadow-sm border-0" style="background: linear-gradient(135deg, #fce4ec, #fff);">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <i class="bi bi-telephone-fill" style="font-size: 2.5rem; color: #d81b60;"></i>
+                            </div>
+                            <h3 class="card-title">Get in Touch</h3>
+                            <p class="card-text">
+                               Contact us for personalized assistance and AI-driven advice.<br>
+                               <a href="tel:+8333851267" class="text-decoration-none fw-bold">📞 (Call Now)</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- New Row: Location Information -->
+            <div class="row mt-4">
+                <div class="col-md-12 text-center animate-slide">
+                    <div class="card shadow-sm border-0" style="background: linear-gradient(135deg, #fff, #f8f9fa); display: inline-block;">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <i class="bi bi-geo-alt-fill" style="font-size: 2.5rem; color: #ff5722;"></i>
+                            </div>
+                            <h3 class="card-title">Our Location</h3>
+                            <p class="card-text">Ongole, Andhra Pradesh, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Contact Form -->
+    <section class="py-5">
+        <div class="container special-design text-center">
+            <h2 class="gradient-heading animate-fade">Send Us a Message</h2>
+            <form class="mt-4" action="https://formspree.io/f/ACTUAL_HASHID" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Your Email</label>
+                    <input type="email" class="form-control" id="email" name="_replyto" placeholder="Enter your email">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Enter your message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-4" style="background-color: #001f3f;">
+        <div class=" text-center" style="margin-bottom: 20px;" >
+            <h5 class="fw-bold mb-1">Follow Us</h5>
+            <a href="https://facebook.com" target="_blank" class="text-white me-3"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://twitter.com" target="_blank" class="text-white me-3"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="text-white"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://www.instagram.com/masternext.in/?utm_source=ig_web_button_share_sheet" target="_blank" class="text-white me-3" style="text-decoration:none;">
+                <i class="fab fa-instagram fa-2x"></i>Instagram
+            </a>
+            <a href="https://www.linkedin.com/company/masternext-technologies-private-limited/" target="_blank" class="text-white" style="text-decoration:none;">
+                <i class="fab fa-linkedin fa-2x"></i>LinkedIn
+            </a>
+        </div>
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 MasterNext Technologies. All rights reserved.</p>
+            <p class="mb-0">
+                <a href="index.html" class="text-white text-decoration-none">Home</a> | 
+                <a href="about.html" class="text-white text-decoration-none">About Us</a> | 
+                <a href="products.html" class="text-white text-decoration-none">Products</a> | 
+                <a href="services.html" class="text-white text-decoration-none">Services</a>
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

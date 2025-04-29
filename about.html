@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MasterNext</title>
+    <!-- Bootstrap CSS -->
+    <link rel="icon" href="Assets/MasterNext Light Logo.png" type="image/png" sizes="200x200" style="background-color: #ffffff; border-radius: 50%;">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Added Google Fonts link for Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global font override */
+        body {
+            font-family: 'Inter', sans-serif;
+            padding-top: 150px; /* Increased padding to ensure content is below the navbar */
+        }
+
+        .navbar {
+            background-color: #001f3f; /* Navy blue background */
+        }
+
+        .navbar .navbar-brand img {
+            width: 150px;
+        }
+
+        .navbar .nav-link {
+            color: white !important;
+        }
+
+        .navbar .nav-link.active {
+            font-weight: bold;
+            text-decoration: none; /* Removed underline */
+        }
+
+        .main-section {
+            background: #001f3f; /* Navy blue background */
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .main-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .main-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 576px) {
+            .navbar .navbar-brand img {
+                width: 100px; /* Adjust logo size for mobile */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar .navbar-brand img {
+                width: 80px !important; /* Force logo to 80px on mobile */
+            }
+        }
+
+        .animate-home-link {
+            text-decoration: none; /* Remove text decoration */
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .animate-home-link:hover {
+            color: #cfb50b; /* Highlight color on hover */
+            transform: scale(1.1); /* Slight zoom effect */
+        }
+
+        .animate-home-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background-color: #cfb50b;
+            transition: width 0.3s ease;
+        }
+
+        .animate-home-link:hover::after {
+            width: 100%; /* Underline animation */
+        }
+
+        .border-thick {
+            border: 15px solid #001f3f; /* Thick navy blue border */
+            border-radius: 0px; /* Rounded corners */
+        }
+
+        .animate-about-section {
+            animation: fadeInSlide 1.5s ease-in-out;
+        }
+
+        .animate-about-title {
+            animation: zoomIn 1.5s ease-in-out;
+        }
+
+        .animate-about-subtitle {
+            animation: fadeIn 2s ease-in-out 0.5s; /* Delayed fade-in */
+        }
+
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .vision-mission-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef); /* Subtle gradient background */
+            border-radius: 10px;
+            animation: fadeInSlide 1.5s ease-in-out;
+        }
+
+        .animate-vision, .animate-mission {
+            animation: fadeInZoom 1.5s ease-in-out;
+        }
+
+        .animate-vision-title, .animate-mission-title {
+            animation: bounceIn 1.5s ease-in-out;
+        }
+
+        .animate-vision-text, .animate-mission-text {
+            animation: fadeIn 2s ease-in-out 0.5s; /* Delayed fade-in */
+        }
+
+        @keyframes fadeInZoom {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .blurred-text-section {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa); /* Subtle gradient background */
+            border-radius: 10px;
+            overflow: hidden;
+            animation: fadeInSlide 1.5s ease-in-out;
+        }
+
+        .blurred-title {
+            font-size: 2.5rem;
+            animation: zoomIn 1.5s ease-in-out;
+        }
+
+        .blurred-paragraph {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(0, 0, 0, 0.5); /* Initially blurred text */
+            filter: blur(2px); /* Blur effect */
+            transition: filter 0.5s ease, color 0.5s ease;
+        }
+
+        .blurred-paragraph:hover {
+            filter: blur(0); /* Remove blur on hover */
+            color: rgba(254, 251, 251, 0.8); /* Darker text on hover */
+        }
+
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .blurred-keywords-section {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa); /* Subtle gradient background */
+            border-radius: 10px;
+            overflow: hidden;
+            animation: fadeInSlide 1.5s ease-in-out;
+        }
+
+        .blurred-title {
+            font-size: 2.5rem;
+            animation: zoomIn 1.5s ease-in-out;
+        }
+
+        .keyword-card {
+            background-color: #001f3f; /* Navy blue background */
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .keyword-card:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+            box-shadow: 0 8px 16px rgba(255, 253, 253, 0.2); /* Add shadow on hover */
+        }
+
+        .blurred-paragraph {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8); /* Light text color */
+        }
+
+        .keyword {
+            font-weight: bold;
+            color: #ffd700; /* Highlighted keyword color */
+        }
+
+        .animate-keyword {
+            animation: fadeInKeyword 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInKeyword {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .commitment-section {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff); /* Subtle gradient background */
+            border-radius: 10px;
+            animation: fadeInSlide 1.5s ease-in-out;
+        }
+
+        .commitment-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .commitment-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(0, 0, 0, 0.8); /* Darker text color */
+        }
+
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bg-navy {
+            background-color: #001f3f; /* Navy blue background */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top"> <!-- Added fixed-top class -->
+        <div class="container">
+            <a class="navbar-brand" href="about.html">
+                <img src="Assets/MasterNext Light Logo.png" alt="MasterNext Logo" style="width: 150px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active animate-home-link" href="index.html">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid py-5 text-center border-thick animate-about-section">
+        <h1 class="display-4 fw-bold text-dark animate-about-title">About Us</h1> <!-- Added animation class -->
+        <p class="lead text-secondary animate-about-subtitle">Technology with Purpose</p> <!-- Added animation class -->
+    </div>
+
+    <div class="container mt-5">
+        <section class="main-section shadow-lg">
+            <h1>Driven by Passion. Defined by Innovation.</h1>
+            <p>At MasterNext Technologies, we believe in designing accessible and scalable technology that empowers users and communities. We are a team of skilled developers, engineers, designers, and educators, driven by the desire to make a real impact. <br> <hr>Founded on innovation and social responsibility, MasterNext stands at the intersection of technology, education, and business transformation.</p>
+        </section>
+    </div>
+
+    <div class="container mt-5">
+        <section class="vision-mission-section text-center py-5">
+            <div class="row">
+                <div class="col-md-6 animate-vision">
+                    <h2 class="fw-bold text-primary animate-vision-title">Our Vision</h2>
+                    <p class="text-muted animate-vision-text">
+                        To become a global leader in disruptive technologies, delivering scalable digital products and empowering the next generation.
+                    </p>
+                </div>
+                <div class="col-md-6 animate-mission">
+                    <h2 class="fw-bold text-success animate-mission-title">Our Mission</h2>
+                    <p class="text-muted animate-mission-text">
+                        To solve real-world challenges through AI-powered solutions, immersive learning, and student upskilling.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="container mt-5">
+        <section class="blurred-keywords-section text-center py-5 position-relative">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="fw-bold text-dark blurred-title">Our Core Values</h2>
+                    <div class="blurred-keywords">
+                        <div class="keyword-card bg-navy text-white p-4 mb-3 animate-keyword">
+                            <p class="blurred-paragraph">
+                                <span class="keyword">Innovation:</span> We constantly push boundaries to create cutting-edge solutions that redefine possibilities.
+                            </p>
+                        </div>
+                        <div class="keyword-card bg-navy text-white p-4 mb-3 animate-keyword">
+                            <p class="blurred-paragraph">
+                                <span class="keyword">Empowerment:</span> We believe in empowering individuals and organizations to achieve their full potential through technology.
+                            </p>
+                        </div>
+                        <div class="keyword-card bg-navy text-white p-4 mb-3 animate-keyword">
+                            <p class="blurred-paragraph">
+                                <span class="keyword">Sustainability:</span> Our commitment to sustainability drives us to develop solutions that benefit both people and the planet.
+                            </p>
+                        </div>
+                        <div class="keyword-card bg-navy text-white p-4 mb-3 animate-keyword">
+                            <p class="blurred-paragraph">
+                                <span class="keyword">Collaboration:</span> We foster a culture of collaboration, working together to achieve shared goals and create meaningful impact.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="container mt-5">
+        <section class="commitment-section text-center py-5 position-relative">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="fw-bold text-dark">Our Commitment</h2>
+                    <p class="text-muted">
+                        At MasterNext, we are dedicated to creating a future where technology seamlessly integrates into everyday life, solving complex challenges and empowering individuals to achieve their full potential. Our focus is on delivering innovative solutions that are not only scalable and efficient but also accessible to everyone, ensuring that no one is left behind in the digital revolution.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-navy text-white py-4">
+        <div class=" text-center" style="margin-bottom: 20px;" >
+            <h5 class="fw-bold mb-1">Follow Us</h5>
+            <a href="https://facebook.com" target="_blank" class="text-white me-3"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://twitter.com" target="_blank" class="text-white me-3"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="text-white"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://www.instagram.com/masternext.in/?utm_source=ig_web_button_share_sheet" target="_blank" class="text-white me-3" style="text-decoration:none;">
+                <i class="fab fa-instagram fa-2x"></i>Instagram
+            </a>
+            <a href="https://www.linkedin.com/company/masternext-technologies-private-limited/" target="_blank" class="text-white" style="text-decoration:none;">
+                <i class="fab fa-linkedin fa-2x"></i>LinkedIn
+            </a>
+        </div>
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 MasterNext Technologies. All rights reserved.</p>
+            <p class="mb-0">
+                <a href="index.html" class="text-white" style="text-decoration:none;">Home</a> | 
+                <a href="services.html" class="text-white"style="text-decoration:none;">Services</a> | 
+                <a href="connect.html" class="text-white"style="text-decoration:none;">Contact Us</a> |
+                <a href="products.html" class="text-white"style="text-decoration:none;">Products</a>
+            </p>
+        </div>
+        
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
